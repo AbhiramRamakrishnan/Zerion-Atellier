@@ -14,7 +14,8 @@ const AboutSection = () => {
             
             <div className="line-accent" />
             
-            <p className="text-body-lg">
+            {/* Changed from text-body-lg to custom brightness */}
+            <p className="text-lg md:text-xl leading-relaxed text-white/90 font-sans">
               At Zerion Atelier, we curate experiences — not just events. Founded by Mr. Mahajan MS 
               and officially established in 2026, Zerion Atelier is a Kerala-based, India-rooted 
               entertainment and stage production company with a refined national and international network.
@@ -23,14 +24,15 @@ const AboutSection = () => {
 
           {/* Right Column */}
           <div className="space-y-8 lg:pt-16">
-            <p className="text-body">
+            {/* Changed from text-body to custom brightness */}
+            <p className="text-base leading-relaxed text-white/70 font-sans">
               We specialize in artist and musical band distribution, large-scale stage show management, 
               bespoke stage & SFX design, and elite event security solutions. Our approach blends 
               creative excellence with disciplined execution, ensuring every production meets the 
               highest professional standards.
             </p>
             
-            <p className="text-body">
+            <p className="text-base leading-relaxed text-white/70 font-sans">
               With strong access to leading artists and musical bands across India, and structured 
               international industry connections — including collaborations within the global music 
               ecosystem — Zerion Atelier offers clients a seamless and confidential pathway to 
