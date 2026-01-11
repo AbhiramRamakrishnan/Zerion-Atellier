@@ -19,58 +19,49 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMobileMenuOpen(false);
-      }
+      if (window.innerWidth >= 768) setIsMobileMenuOpen(false);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [isMobileMenuOpen]);
-
-  const handleNavClick = () => {
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-md border-b border-border py-4"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="section-container py-6">
+      <div className="section-container">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo & Brand Name */}
           <a href="#" className="flex items-center gap-3 group">
+            <div className="relative w-8 h-8 transition-transform duration-500 group-hover:scale-110">
+              <img 
+                src="/logo.jpg" 
+                alt="Zerion Atelier" 
+                className="w-full h-full object-contain"
+              />
+            </div>
             <span className="text-xl font-serif tracking-tight">
-              <span className="text-gradient-navy">Zerion</span>{" "}
-              <span className="text-foreground">Atelier</span>
+              <span className="text-gradient-navy">Zerion</span>
+              <span className="text-foreground ml-1.5">Atelier</span>
             </span>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -83,46 +74,32 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground p-2 -mr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
+            className="md:hidden text-foreground p-2"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div
-          className="md:hidden fixed inset-0 top-[73px] z-40 bg-background/98 backdrop-blur-md animate-fade-in"
-          role="dialog"
-          aria-modal="true"
-        >
-          <nav className="flex flex-col items-center justify-center h-full gap-8 px-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={handleNavClick}
-                className="text-lg uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ))}
-            
-            {/* Social Links in Mobile Menu */}
-            <div className="pt-8 border-t border-border/50 mt-4">
-              <SocialLinks className="gap-6" iconSize={22} />
-            </div>
-          </nav>
+        <div className="md:hidden fixed inset-0 top-0 z-40 bg-background flex flex-col items-center justify-center gap-10 animate-fade-in">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl uppercase tracking-[0.2em] text-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="pt-10 border-t border-border w-32 flex justify-center">
+            <SocialLinks className="gap-8" iconSize={24} />
+          </div>
         </div>
       )}
     </header>
