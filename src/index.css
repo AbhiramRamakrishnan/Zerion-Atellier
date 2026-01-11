@@ -230,3 +230,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--navy) / 0.5);
 }
+
+/* Hide scrollbar for horizontal carousels */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
