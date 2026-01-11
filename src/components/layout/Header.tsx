@@ -28,7 +28,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll only - simplified
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -45,20 +44,28 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border py-4"
+          ? "bg-background/95 backdrop-blur-md border-b border-border py-3"
           : "bg-transparent py-6"
       }`}
     >
       <div className="section-container">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="/#hero" className="flex items-center gap-3 group z-[110]">
-            <div className="w-8 h-8">
-              <img src="/logo.jpg" alt="Logo" className="w-full h-full object-contain" />
+          
+          {/* Logo & Brand Name Container */}
+          <a href="/#hero" className="flex flex-col group z-[110]">
+            <div className="flex items-center gap-3">
+              <div className="w-7 h-7 md:w-8 md:h-8 transition-transform duration-500 group-hover:scale-110">
+                <img src="/logo.jpg" alt="Logo" className="w-full h-full object-contain" />
+              </div>
+              <span className="text-lg md:text-xl font-serif tracking-tight text-foreground">
+                <span className="text-gradient-navy">Zerion</span> Atelier
+              </span>
             </div>
-            <span className="text-xl font-serif tracking-tight text-foreground">
-              <span className="text-gradient-navy">Zerion</span> Atelier
-            </span>
+            
+            {/* Added Tagline below */}
+            <p className="text-[7px] md:text-[8px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-white/90 mt-1 font-sans leading-none">
+              EXPERIENCE · EXPERIMENT · EXPECTATION
+            </p>
           </a>
 
           {/* Desktop Nav */}
@@ -78,7 +85,7 @@ const Header = () => {
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 md:hidden z-[110]">
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-muted-foreground p-2">
+            <a href="https://wa.me/+919746004720" target="_blank" rel="noopener noreferrer" className="text-muted-foreground p-2">
               <WhatsAppIcon className="w-5 h-5" />
             </a>
             <button
@@ -91,7 +98,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* FIXED MOBILE OVERLAY */}
+      {/* MOBILE OVERLAY */}
       <div 
         className={`fixed inset-0 w-full h-screen bg-background z-[105] md:hidden transition-all duration-300 ease-in-out ${
           isMobileMenuOpen 
