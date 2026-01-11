@@ -19,7 +19,7 @@ const HeroSection = () => {
 
           {/* Main Title */}
           <h1 className="text-editorial-xl fade-in-up-delayed">
-            <span className="text-gradient-gold font-sans">Zerion</span>{" "}
+            <span className="text-gradient-navy font-sans">Zerion</span>{" "}
             <span className="text-foreground font-sans">Atelier</span>
           </h1>
 
