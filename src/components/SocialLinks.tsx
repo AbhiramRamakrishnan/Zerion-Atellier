@@ -63,7 +63,7 @@ const SocialLinks = ({ className = '', iconSize = 20 }: SocialLinksProps) => {
             {IconComponent ? (
               <IconComponent size={iconSize} />
             ) : (
-              <WhatsAppIcon className={`w-[${iconSize}px] h-[${iconSize}px]`} />
+                <WhatsAppIcon className="w-5 h-5" />
             )}
           </a>
         );
