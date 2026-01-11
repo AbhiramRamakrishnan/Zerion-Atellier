@@ -71,7 +71,7 @@ const Header = () => {
               ))}
             </nav>
             <div className="w-[1px] h-4 bg-border" />
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300">
+            <a href="https://wa.me/+919746004720" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300">
               <WhatsAppIcon className="w-5 h-5" />
             </a>
           </div>
