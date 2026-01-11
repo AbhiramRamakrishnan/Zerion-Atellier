@@ -15,7 +15,8 @@
     --popover: 220 20% 6%;
     --popover-foreground: 210 15% 92%;
 
-    --primary: 215 50% 45%;
+    /* --primary: 215 50% 45%; */
+    --primary: 190 100% 40%;    /* This updates lines and captions */
     --primary-foreground: 210 15% 98%;
 
     --secondary: 215 15% 12%;
@@ -32,14 +33,22 @@
 
     --border: 215 15% 18%;
     --input: 215 15% 18%;
-    --ring: 215 50% 45%;
+    /* --ring: 215 50% 45%; */
+    --ring: 190 100% 40%;
+
 
     --radius: 0px;
 
     /* Custom Zerion tokens - Navy/Steel Blue palette */
-    --navy: 215 50% 45%;
+
+    /* --navy: 215 50% 45%;
     --navy-light: 210 45% 60%;
-    --navy-dark: 220 55% 25%;
+    --navy-dark: 220 55% 25%; */
+
+    --navy: 190 100% 40%;       /* Base Miami Blue */
+    --navy-light: 185 90% 60%;  /* Lighter highlight */
+    --navy-dark: 195 100% 25%;  /* Darker shade for contrast */
+    
     --steel: 210 15% 55%;
     --steel-light: 210 20% 75%;
     --slate: 215 20% 35%;
@@ -102,7 +111,13 @@
   }
 
   .text-gradient-navy {
-    background: linear-gradient(135deg, hsl(var(--navy-light)), hsl(var(--navy)), hsl(var(--steel)));
+    /* Updated to look like Miami Blue paint reflections */
+    background: linear-gradient(
+      135deg, 
+      hsl(185 90% 60%), 
+      hsl(190 100% 40%), 
+      hsl(195 100% 30%)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
