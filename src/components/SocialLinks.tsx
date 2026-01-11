@@ -18,7 +18,7 @@ const socialLinks = [
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/97460 04720', // TODO: Replace with actual number
+    href: 'https://wa.me/+919746004720', // TODO: Replace with actual number
     icon: null, // Custom SVG below
   },
 ];
