@@ -3,23 +3,23 @@ import { Instagram, Facebook, Youtube } from 'lucide-react';
 const socialLinks = [
   {
     name: 'Instagram',
-    href: 'https://www.instagram.com/zerion_atelier/', // TODO: Replace with actual URL
+    href: 'https://www.instagram.com/zerion_atelier/', 
     icon: Instagram,
   },
   {
     name: 'Facebook',
-    href: 'https://facebook.com/placeholder', // TODO: Replace with actual URL
+    href: 'https://facebook.com', 
     icon: Facebook,
   },
   {
     name: 'YouTube',
-    href: 'https://youtube.com/placeholder', // TODO: Replace with actual URL
+    href: 'https://youtube.com', 
     icon: Youtube,
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/+919746004720', // TODO: Replace with actual number
-    icon: null, // Custom SVG below
+    href: 'https://wa.me/+919746004720', 
+    icon: null,
   },
 ];
 
