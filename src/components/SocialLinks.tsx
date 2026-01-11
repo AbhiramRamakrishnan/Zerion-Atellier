@@ -3,7 +3,7 @@ import { Instagram, Facebook, Youtube } from 'lucide-react';
 const socialLinks = [
   {
     name: 'Instagram',
-    href: 'https://instagram.com/placeholder', // TODO: Replace with actual URL
+    href: 'https://www.instagram.com/zerion_atelier/', // TODO: Replace with actual URL
     icon: Instagram,
   },
   {
