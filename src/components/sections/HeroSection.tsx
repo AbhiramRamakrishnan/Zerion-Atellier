@@ -23,6 +23,10 @@ const HeroSection = () => {
             <span className="text-foreground font-sans">Atelier</span>
           </h1>
 
+          <p className="text-caption tracking-[0.4em] md:tracking-[0.6em] fade-in-up-delayed opacity-80">
+            EXPERIENCE · EXPERIMENT · EXPECTATION
+          </p>
+
           {/* Tagline */}
           <p className="text-body-lg max-w-2xl mx-auto fade-in-up-delayed-2 text-base">
             We curate experiences — not just events. Precision-crafted stage productions 
