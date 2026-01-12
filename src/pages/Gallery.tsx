@@ -2,13 +2,13 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 const galleryItems = [
-  {
-    id: 1,
-    type: "image",
-    title: "",
-    category: "",
-    src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format&fit=crop",
-  },
+  // {
+  //   id: 1,
+  //   type: "image",
+  //   title: "",
+  //   category: "",
+  //   src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format&fit=crop",
+  // },
   // {
   //   id: 2,
   //   type: "image",

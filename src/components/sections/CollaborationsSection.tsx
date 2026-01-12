@@ -10,7 +10,7 @@ type Collaboration = {
 };
 
 const collaborations: Collaboration[] = [
-  { title: "Echo Pulse", description: "Alternative rock band known for live energy.", image: "/images/band1.jpg" },
+  // { title: "Echo Pulse", description: "Alternative rock band known for live energy.", image: "/images/band1.jpg" },
 //   { title: "Neon Tribe", description: "Electronic fusion collective.", image: "/images/band2.jpg" },
 //   { title: "Rhythm Syndicate", description: "Percussion-focused performance group.", image: "/images/band3.jpg" },
 //   { title: "Midnight Strings", description: "Indie acoustic ensemble.", image: "/images/band4.jpg" },
