@@ -55,7 +55,7 @@ const Header = () => {
           <a href="/#hero" className="flex flex-col group z-[110]">
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 md:w-8 md:h-8 transition-transform duration-500 group-hover:scale-110">
-                <img src="/logo.jpg" alt="Logo" className="w-full h-full object-contain" />
+                <img src="/zerion_logoPNG.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-lg md:text-xl font-serif tracking-tight text-foreground">
                 <span className="text-gradient-navy">Zerion</span> Atelier
