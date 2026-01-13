@@ -75,25 +75,28 @@ export default function CollaborationsSection() {
                   className="flex-[0_0_75%] min-w-0 pl-6 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]"
                 >
                   {/* WRAPPED IN ANCHOR TAG */}
+                  {/* ... inside the map function ... */}
                   <a 
                     href={item.href}
-                    className="block group/card relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 h-full"
+                    className="block group/card relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 h-full 
+                              min-h-[500px] md:min-h-[550px]" // Forces a taller minimum height
                   >
-                    <div className="aspect-[4/3] overflow-hidden">
+                    {/* Aspect ratio changed from 4/3 to 3/4 for a taller portrait look */}
+                    <div className="aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="h-full w-full object-contain grayscale-[50%] group-hover/card:grayscale-0 transition-all duration-700 group-hover/card:scale-110"
+                        className="h-full w-full object-cover grayscale-[50%] group-hover/card:grayscale-0 transition-all duration-700 group-hover/card:scale-105"
                         loading="lazy"
                       />
                     </div>
                     
-                    <div className="p-6 space-y-3">
-                      <h3 className="text-lg font-serif text-foreground tracking-tight group-hover/card:text-primary transition-colors">
+                    <div className="p-6 md:p-8 space-y-4"> {/* Increased padding for better breathing room */}
+                      <h3 className="text-xl md:text-2xl font-serif text-foreground tracking-tight group-hover/card:text-primary transition-colors">
                         {item.title}
                       </h3>
                       <div className="h-[1px] w-8 bg-primary/30 group-hover/card:w-12 group-hover/card:bg-primary transition-all duration-500" />
-                      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed line-clamp-3">
                         {item.description}
                       </p>
                     </div>
