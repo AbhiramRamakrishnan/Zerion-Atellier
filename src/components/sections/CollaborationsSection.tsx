@@ -3,18 +3,23 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import img1 from "@/assets/collaborators/img1.jpeg";
+
 type Collaboration = {
   title: string;
   description: string;
   image: string;
+  href: string; // Added href property
 };
 
 const collaborations: Collaboration[] = [
-  // { title: "Echo Pulse", description: "Alternative rock band known for live energy.", image: "/images/band1.jpg" },
-//   { title: "Neon Tribe", description: "Electronic fusion collective.", image: "/images/band2.jpg" },
-//   { title: "Rhythm Syndicate", description: "Percussion-focused performance group.", image: "/images/band3.jpg" },
-//   { title: "Midnight Strings", description: "Indie acoustic ensemble.", image: "/images/band4.jpg" },
-//   { title: "Solaris Duo", description: "Ambient electronic producers.", image: "/images/band5.jpg" },
+  { 
+    title: "KAANTHA", 
+    description: "Alternative rock band known for live energy.", 
+    image: img1,
+    href: "/artist/kaantha" // Example path
+  },
+  // Add other bands here...
 ];
 
 export default function CollaborationsSection() {
@@ -44,7 +49,7 @@ export default function CollaborationsSection() {
     <section className="section-padding bg-charcoal overflow-hidden">
       <div className="section-container">
         
-        {/* Header - Editorial Style */}
+        {/* Header */}
         <div className="mb-16 space-y-6 max-w-4xl">
           <div className="space-y-4">
             <p className="text-caption">Artist & Band Collaborations</p>
@@ -52,19 +57,16 @@ export default function CollaborationsSection() {
               Curated Talent. <span className="text-gradient-navy">Trusted Associations.</span>
             </h2>
           </div>
-          
           <div className="line-accent w-24" />
-          
           <p className="text-body-lg text-white/70 max-w-2xl">
             Zerion Atelier collaborates with select bands and performance groups
             that meet our standards of discipline and stage excellence.
           </p>
         </div>
 
-        {/* Carousel Wrapper - Relative for Absolute Buttons */}
-        <div className="relative px-4 sm:px-0">
+        {/* Carousel Wrapper */}
+        <div className="relative px-4 sm:px-0 group"> {/* Added group here for button hover logic */}
           
-          {/* Viewport */}
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex -ml-6"> 
               {collaborations.map((item, index) => (
@@ -72,33 +74,36 @@ export default function CollaborationsSection() {
                   key={index} 
                   className="flex-[0_0_75%] min-w-0 pl-6 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]"
                 >
-                  <div className="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-500 h-full">
+                  {/* WRAPPED IN ANCHOR TAG */}
+                  <a 
+                    href={item.href}
+                    className="block group/card relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 h-full"
+                  >
                     <div className="aspect-[4/3] overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="h-full w-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                        className="h-full w-full object-contain grayscale-[50%] group-hover/card:grayscale-0 transition-all duration-700 group-hover/card:scale-110"
                         loading="lazy"
                       />
                     </div>
                     
                     <div className="p-6 space-y-3">
-                      <h3 className="text-lg font-serif text-foreground tracking-tight">
+                      <h3 className="text-lg font-serif text-foreground tracking-tight group-hover/card:text-primary transition-colors">
                         {item.title}
                       </h3>
-                      <div className="h-[1px] w-8 bg-primary/30 group-hover:w-12 group-hover:bg-primary transition-all duration-500" />
+                      <div className="h-[1px] w-8 bg-primary/30 group-hover/card:w-12 group-hover/card:bg-primary transition-all duration-500" />
                       <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                         {item.description}
                       </p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Side Navigation Buttons */}
-          {/* Left Button */}
+          {/* Buttons */}
           <button
             onClick={scrollPrev}
             className="absolute left-0 lg:-left-6 top-1/2 -translate-y-1/2 z-20
@@ -110,7 +115,6 @@ export default function CollaborationsSection() {
             <ChevronLeft size={20} />
           </button>
 
-          {/* Right Button */}
           <button
             onClick={scrollNext}
             className="absolute right-0 lg:-right-6 top-1/2 -translate-y-1/2 z-20
@@ -121,7 +125,6 @@ export default function CollaborationsSection() {
           >
             <ChevronRight size={20} />
           </button>
-          
         </div>
       </div>
     </section>
