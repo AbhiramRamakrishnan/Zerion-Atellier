@@ -1,6 +1,6 @@
 
 import kaanthaHero from "@/assets/collaborators/img1.jpeg"; 
-import aprilsAwayHero from "@/assets/collaborators/img1.jpeg";
+import aprilsAwayHero from "@/assets/collaborators/img2.jpeg";
 
 export const collaborations = [
   {
